@@ -44,7 +44,7 @@ import aioschedule
 
 
 async def scheduler():
-    aioschedule.every(2).seconds.do(send_ti)
+    aioschedule.every(2).seconds.do(send_ti(message="Hello"))
     while True:
         await aioschedule.run_pending()
         await asyncio.sleep(1)
